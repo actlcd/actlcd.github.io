@@ -63,6 +63,52 @@
     .hero.is-light .subtitle {
       color: #222;
     }
+
+    /* News bar */
+    .news-bar {
+      padding: 0;
+      /* keep it tight */
+      background: transparent;
+      /* we use the notification's bg */
+    }
+
+    .news-bar .notification {
+      border-radius: 12px;
+      border: 1px solid #e8eef6;
+      box-shadow: 0 6px 16px rgba(30, 60, 90, 0.06);
+    }
+
+    .news-bar .pulse-dot {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #3e8ed0;
+      /* Bulma info color family */
+    }
+
+    .news-bar .pulse-dot::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      animation: pulse 1.6s ease-out infinite;
+      box-shadow: 0 0 0 0 rgba(62, 142, 208, 0.6);
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(62, 142, 208, 0.6);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(62, 142, 208, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(62, 142, 208, 0);
+      }
+    }
   </style>
 </head>
 
@@ -164,6 +210,25 @@
           Sequential-level optimization: By framing decoding as a Markov decision process, ActLCD selectively activates
           layer contrasting to maximize cumulative reward throughout the generation.
         </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- News Bar -->
+  <section class="news-bar" aria-label="Latest news">
+    <div class="container is-max-desktop">
+      <div class="notification is-info is-light"
+        style="margin: 10px 0 0; display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap;">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="tag is-info is-light is-medium">
+          <span class="icon"><i class="fas fa-bullhorn" aria-hidden="true"></i></span>
+          <span>News</span>
+        </span>
+        <span class="has-text-weight-semibold">ActLCD</span>
+        <span>has been <strong>accepted</strong> to <strong>EMNLP&nbsp;2025</strong> 🎉</span>
+        <!-- Optional quick links -->
+        <a href="https://arxiv.org/abs/2505.23657" class="button is-small is-info is-outlined">Paper</a>
+        <a href="#bibtex" class="button is-small is-info is-outlined">Cite</a>
       </div>
     </div>
   </section>
