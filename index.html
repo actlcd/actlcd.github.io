@@ -167,7 +167,9 @@
         </div>
         <h2 class="subtitle has-text-centered" style="margin-top: 10px;">
           <span class="tag is-info is-light">Main Figure</span>
-          ActLCD selectively activates layer contrast during decoding to maximize sequence-level factuality.
+          The workflow of ActLCD. (1) Next-token selection: ActLCD dynamically apply layer contrasting at each step. (2)
+          Sequential-level optimization: By framing decoding as a Markov decision process, ActLCD selectively activates
+          layer contrasting to maximize cumulative reward throughout the generation.
         </h2>
       </div>
     </div>
