@@ -226,22 +226,39 @@
       <div class="columns is-centered">
         <div class="column is-full-width">
           <h2 class="title is-3">Evaluation Results</h2>
-          <div class="content has-text-justified">
-            <p>We compare ActLCD with SLED and DoLa on five benchmarks and multiple model scales.</p>
-          </div>
-
           <!-- Example: insert result figure images you export from the paper -->
           <div class="figure" style="margin-bottom: 18px;">
             <img src="./static/images/tb1.png"
               alt="Results overview across TruthfulQA, LongFact, StrategyQA, GSM8K, and package hallucination.">
           </div>
+          <div class="content has-text-justified">
+            <p>Results overview across TruthfulQA, LongFact, StrategyQA, GSM8K, and package hallucination.</p>
+          </div>
           <div class="figure" style="margin-bottom: 18px;">
             <img src="./static/images/tb2.png"
               alt="Greedy correctly computes the initial toy count but then “forgets” that value later in its reasoning, resulting in the incorrect answer. Whereas SLED and DoLa misinterpret the toys needed at the beginning, they subsequently build an entire chain of reasoning on this false assumption, resulting in a significantly incorrect answer. This exemplifies a phenomenon known as “hallucination nowballing”, where early mistakes cascade into increasingly severe errors. Such missteps may be due to the side effect of layer contrasting that forces LLMs to interpret longer sentences, potentially leading to fundamental misunderstandings. In contrast, ActLCD selectively activates layer contrasting to leverage latent knowledge in deep layers, fostering a coherent logical thought chain that yields the affirmative answer.">
           </div>
+          <div class="content has-text-justified">
+            <p>Greedy correctly computes the initial toy count but then “forgets” that value later in its reasoning,
+              resulting in the incorrect answer. Whereas SLED and DoLa misinterpret the toys needed at the beginning,
+              they subsequently build an entire chain of reasoning on this false assumption, resulting in a
+              significantly incorrect answer. This exemplifies a phenomenon known as “hallucination nowballing”, where
+              early mistakes cascade into increasingly severe errors. Such missteps may be due to the side effect of
+              layer contrasting that forces LLMs to interpret longer sentences, potentially leading to fundamental
+              misunderstandings. In contrast, ActLCD selectively activates layer contrasting to leverage latent
+              knowledge in deep layers, fostering a coherent logical thought chain that yields the affirmative answer.
+            </p>
+          </div>
           <div class="figure" style="margin-bottom: 18px;">
             <img src="./static/images/tb3.png"
               alt="ActLCD significantly reduced package hallucination in both Python and JavaScript. A key challenge in this benchmark is that models must generate multiple package names, where one hallucinated package can compromise the entire response. ActLCD’s dynamic contrastive mechanism is especially beneficial for this context.">
+          </div>
+          <div class="content has-text-justified">
+            <p>ActLCD significantly reduced package hallucination in both Python and JavaScript. A key challenge in this
+              benchmark is that models must generate multiple package names, where one hallucinated package can
+              compromise the entire response. ActLCD’s dynamic contrastive mechanism is especially beneficial for this
+              context.
+            </p>
           </div>
         </div>
       </div>
